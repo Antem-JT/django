@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Create Notes</h1>
+    </header>
+    <main>
+        <div class="notes-container">
+            <div class="notes-list">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="title" id="" placeholder="Title" class="title">
+                    <textarea name="text" id="" cols="30" rows="10" placeholder="Note something down" class="text"></textarea>
+                    <input type="submit" value="Save" class="save">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

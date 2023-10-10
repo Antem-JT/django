@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Delete Notes "Titled"</h1>
+    </header>
+    <main>
+        <div class="notes-container">
+            <div class="notes-list">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <h4>are you sure you want to delete " {{notes.title}} " </h4>
+                    <input type="submit" value="Delete" class="save">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

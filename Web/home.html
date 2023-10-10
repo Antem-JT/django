@@ -1,0 +1,35 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>My Notes</h1>
+    </header>
+    <main>
+        <div class="notes-container">
+            <div class="notes-list">
+                <h2><u>My Notes</u></h2>
+                <ul id="notes-list">
+                    {% for note in notes %}
+                    <li><h3><a href="{% url 'read' note.id %}" style="text-decoration: none; color: black;">{{note}}</a> <a href="{% url 'edit' note.id %}">Edit</a> <a href="{% url 'delete' note.id %}">Delete</a></h3></li>
+                    {% endfor %}
+                </ul>
+                <button class="add">
+                    <a href="{% url 'create' %}">
+                        Add Notes
+                    </a>
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

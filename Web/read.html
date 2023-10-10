@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Title - "{{notes.title}}"</h1>
+    </header>
+    <main>
+        <div class="notes-container">
+            <div class="notes-list">
+                <h2>{{notes.title}}</h2>
+                <p>
+                    {{notes.text}}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
